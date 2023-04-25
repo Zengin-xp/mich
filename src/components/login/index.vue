@@ -35,12 +35,14 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-
+const router = useRouter()
 const email = ref("")
 const password = ref("")
 
 const byVisitor = ()=>{
+    router.push("/test")
     alert("以游客方式登录")
 }
 
@@ -53,7 +55,7 @@ const byWeChat = ()=>{
 }
 
 // 邮箱验证
-function IsEmail(str) {
+function IsEmail(str: string) {
              var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
             return  reg.test(str);
          }
